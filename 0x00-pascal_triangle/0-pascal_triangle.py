@@ -3,20 +3,16 @@
 
 
 def pascal_triangle(n):
+    """bgbb"""
+    gg = []
     if n <= 0:
-        return []
-
-    triangle = []
-
-    for i in range(n):
-        # Initialize a row with 1s
-        row = [1] * (i + 1)
-
-        # Update the values for the current row based on the previous row
-        for j in range(1, i):
-            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
-
-        # Add the current row to the triangle
-        triangle.append(row)
-
-    return triangle
+        return gg
+    gg = [[1]]
+    for b in range(1, n):
+        gp = [1]
+        for v in range(len(gg[b - 1]) - 1):
+            d = gg[b - 1]
+            gp.append(gg[b - 1][v] + gg[b - 1][v + 1])
+        gp.append(1)
+        gg.append(gp)
+    return gg
