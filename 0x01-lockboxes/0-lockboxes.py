@@ -8,7 +8,7 @@ def canUnlockAll(boxes):
     for m in range(1, len(boxes) - 1):
         r = False
         for x in range(len(boxes)):
-            r = (m in boxes[idx] and m != x)
+            r = (m in boxes[x] and m != x)
             if r:
                 break
         if r is False:
