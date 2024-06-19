@@ -4,10 +4,10 @@ import sys
 
 
 def print_msg(cs, f):
-    print("File size: {}".format(f))
+    print("File size: <{}>".format(f))
     for k, v in sorted(codes.items()):
         if v != 0:
-            print("{}: {}".format(k, v))
+            print("<{}>: <{}>".format(k, v))
 
 
 f = 0
