@@ -63,4 +63,4 @@ if __name__ == "__main__":
     n = validate_and_get_n()
     solutions = solve_nqueens(n)
     for solution in solutions:
-        print(solution)
+        print([[r, c] for r, c in solution])
