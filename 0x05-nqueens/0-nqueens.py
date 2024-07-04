@@ -2,6 +2,7 @@
 """N-Queens problem solver."""
 import sys
 
+
 def validate_and_get_n():
     """Validates the input and retrieves the size of the chessboard.
 
@@ -21,6 +22,7 @@ def validate_and_get_n():
         sys.exit(1)
     return n
 
+
 def is_conflict(queen1, queen2):
     """Determines if two queens are in conflict.
 
@@ -34,6 +36,7 @@ def is_conflict(queen1, queen2):
     return (queen1[0] == queen2[0] or
             queen1[1] == queen2[1] or
             abs(queen1[0] - queen2[0]) == abs(queen1[1] - queen2[1]))
+
 
 def solve_nqueens(n):
     """Finds all solutions for the N-Queens problem.
@@ -50,7 +53,8 @@ def solve_nqueens(n):
         else:
             for col in range(n):
                 new_queen = (row, col)
-                if all(not is_conflict(new_queen, q) for q in current_solution):
+                if all(not is_conflict(new_queen, q)
+                        for q in current_solution):
                     current_solution.append(new_queen)
                     place_queens(row + 1, current_solution)
                     current_solution.pop()
@@ -58,6 +62,7 @@ def solve_nqueens(n):
     solutions = []
     place_queens(0, [])
     return solutions
+
 
 if __name__ == "__main__":
     n = validate_and_get_n()
